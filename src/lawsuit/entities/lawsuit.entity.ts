@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
@@ -5,11 +6,17 @@ export type LawsuitDocument = Lawsuit & Document;
 
 @Schema()
 export class Lawsuit {
-  @Prop() lawsuitNumber: string;
+  @Prop()
+  @ApiProperty()
+  lawsuitNumber: string;
 
-  @Prop() author: string;
+  @Prop()
+  @ApiProperty()
+  author: string;
 
-  @Prop() defendant: string;
+  @Prop()
+  @ApiProperty()
+  defendant: string;
 }
 
 export const LawsuitSchema = SchemaFactory.createForClass(Lawsuit);
