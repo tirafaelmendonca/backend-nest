@@ -4,9 +4,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://tirafaelmendonca:Ana%23353932@cluster0.dxgif.mongodb.net/process-data-extractor'
-    ),
+    MongooseModule.forRoot(process.env.MONGO_URL),
     LawsuitModule,
   ],
   controllers: [],
